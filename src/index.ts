@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 server.listen(9000, () => console.log('Server listening at 9000'));
 
-//mongoDB URL
+//mongoDB URL: move it to .env file later
 const MONGODB_URL = 'mongodb+srv://malishben360:malishben360@cluster0.nykh3xo.mongodb.net/?retryWrites=true&w=majority';
 
 //mongoose connection
