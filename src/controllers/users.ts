@@ -36,12 +36,14 @@ export const updateUser = async(req: express.Request, res: express.Response) => 
         const { id } = req.params;
         const { username } = req.body;
 
+        //Check if id exist
         if (!id) {
             return res.sendStatus(400)
         }
         
         const updatedUser = await getUserById(id);
 
+        //Check if user exist
         if (!updatedUser) {
             return res.sendStatus(404);
         }
