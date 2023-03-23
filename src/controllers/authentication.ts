@@ -11,6 +11,7 @@ export const login = async(req: express.Request, res: express.Response) => {
             return res.sendStatus(403);
         }
 
+        //Important to select salt and password as they aren't selected by default in the user model
         const user = await getUserByEmail(email).select("+authentication.salt +authentication.password");
 
         //Check if user exist
@@ -43,12 +44,12 @@ export const register = async(req: express.Request, res: express.Response) => {
     try {
         const { username, email, password } = req.body;
 
-        //check if any of the payload attribute is empty
+        //Check if any of the payload attribute is empty
         if(!username || !email || !password) {
             return res.sendStatus(400);
         }
 
-        //check if the user already exist
+        //Check if the user already exist
         const existingUser = await getUserByEmail(email);
         if(existingUser){
             return res.sendStatus(400);

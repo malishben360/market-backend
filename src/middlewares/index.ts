@@ -1,9 +1,10 @@
 import express from 'express';
 import { merge, get } from 'lodash';
-import { getUserBySessionToken } from 'models/user';
+import { getUserBySessionToken } from '../models/user';
 
 export const isAuthenticated = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
+        //Move the cookies key to .env file later
         const sessionToken = req.cookies['MALISH-AUTH'];
 
         //Check if it has active session
@@ -20,7 +21,7 @@ export const isAuthenticated = async(req: express.Request, res: express.Response
         }
 
         merge(req, { identity: existingUser });
-        next();
+        return next();
     } catch(error) {
         console.log(error);
         return res.sendStatus(400);
