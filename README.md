@@ -23,16 +23,16 @@ The market-backend exposes CRUD API endpoint for the market-frontend application
 
 
 ## Installation
-Setup mongoDB locally or remotely, and change line 26 with your mongoDB URL
+* Setup mongoDB locally or remotely, and change line 26 with your mongoDB URL
 `const MONGODB_URL = '<mongoDB-URL>'`
-Clone the project `market-backend`['https://github.com/malishben360/market-backend.git']
-* `git clone <git-repository>`
-Change directory
-* `cd market-backen`
-Install all the required dependencies
-* `npm install`
-Run the application
-* `npm run start`
+* Clone the project `market-backend`['https://github.com/malishben360/market-backend.git']
+`git clone <git-repository>`
+* Change directory
+`cd market-backen`
+* Install all the required dependencies
+`npm install`
+* Run the application
+`npm run start`*******
 
 
 ## Contributors
