@@ -43,6 +43,7 @@ export const isAuthenticated = async(req: express.Request, res: express.Response
             return res.sendStatus(403);
         }
 
+        //Add the user to the request object for verification
         merge(req, { identity: existingUser});
         return next();
     } catch(error) {
